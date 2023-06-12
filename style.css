@@ -1,0 +1,259 @@
+:root {
+  --tomato: hsl(4, 100%, 67%);
+  --dark-navy: hsl(234, 29%, 20%);
+  --pale-navy: hsl(235, 17%, 26%);
+  --gray: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+  --gradient: linear-gradient(204.47deg, #ff6a3a 0%, #ff527b 100%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button {
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.invisible {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card,
+.card-success {
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.card {
+  background-color: var(--white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img img {
+  width: 100%;
+}
+
+.card-body {
+  padding: 2.5rem 1.5rem;
+  color: var(--dark-navy);
+}
+
+.card-body-heading,
+.card-success-heading {
+  font-size: 2.5rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.card-body-text {
+  margin-top: 1.5rem;
+}
+
+.card-body-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.card-body-list li {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
+
+.card-body-list li::before {
+  content: url('/icon-list.svg');
+  height: 21px;
+}
+
+.form {
+  margin-top: 2.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.error-text {
+  color: var(--tomato);
+  display: none;
+}
+
+.validation-error .error-text {
+  display: block;
+}
+
+.validation-error .input {
+  color: var(--tomato);
+  background: hsla(4, 100%, 67%, 0.15);
+  outline: 1px solid var(--tomato);
+}
+
+.input {
+  padding: 1rem 1.5rem;
+  border: none;
+  outline: 1px solid hsla(243, 28%, 13%, 0.25);
+  border-radius: 8px;
+  transition: outline 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.input::placeholder {
+  color: hsl(236, 7%, 60%);
+}
+
+.validation-error .input::placeholder {
+  color: var(--tomato);
+}
+
+.input:focus {
+  outline: 1px solid var(--dark-navy);
+}
+
+.btn {
+  position: relative;
+  margin-top: 1.5rem;
+  background-color: var(--dark-navy);
+  width: 100%;
+  border: none;
+  color: var(--white);
+  font-weight: 700;
+  padding: 1rem 0;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--gradient);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.btn span {
+  position: relative;
+}
+
+.btn:hover,
+.btn:focus {
+  box-shadow: 0px 16px 32px rgba(255, 97, 85, 0.5);
+}
+
+.btn:hover::before,
+.btn:focus::before {
+  opacity: 1;
+}
+
+.card-success {
+  background-color: var(--white);
+  padding: 2.5rem 1.5rem;
+  padding-top: 9.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--dark-navy);
+  min-height: 100vh;
+}
+
+.card-success-heading {
+  margin-top: 2.5rem;
+}
+
+.card-success-text {
+  margin-top: 1.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  body {
+    background-color: var(--pale-navy);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    margin: 4rem 0;
+  }
+
+  .card {
+    border-radius: 2.25rem;
+    box-shadow: 0px 15px 60px rgba(0, 0, 0, 0.25);
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    padding: 1.5rem;
+    padding-left: 4rem;
+  }
+
+  .card-img {
+    order: 1;
+  }
+
+  .card-body {
+    padding: 0;
+    max-width: 376px;
+  }
+
+  .card-body-heading,
+  .card-success-heading {
+    font-size: 3.5rem;
+  }
+
+  .card-success {
+    min-height: auto;
+    max-width: 504px;
+    padding: 4rem;
+    padding-top: 3rem;
+    border-radius: 2.25rem;
+    box-shadow: 0px 15px 60px rgba(0, 0, 0, 0.25);
+  }
+
+  .card-success .btn {
+    margin-top: 2.5rem;
+  }
+}

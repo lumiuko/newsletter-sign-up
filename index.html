@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  </head>
+  <body>
+    <main>
+      <div class="card" id="main-card">
+        <picture class="card-img">
+          <source srcset="/illustration-sign-up-desktop.svg" media="(min-width: 960px)" />
+          <img src="/illustration-sign-up-mobile.svg" alt="Sign up illustration" />
+        </picture>
+        <div class="card-body">
+          <h1 class="card-body-heading">Stay updated!</h1>
+          <p class="card-body-text">Join 60,000+ product managers receiving monthly updates on:</p>
+          <ul class="card-body-list">
+            <li>Product discovery and building what matters</li>
+            <li>Measuring to ensure updates are a success</li>
+            <li>And much more!</li>
+          </ul>
+          <form class="form" autocomplete="off" id="form">
+            <div class="form-group">
+              <div class="form-group-top">
+                <label for="email" class="label">Email address</label>
+                <div class="error-text">Valid email required</div>
+              </div>
+              <input id="email" class="input" name="email" type="text" placeholder="email@company.com" />
+            </div>
+            <button class="btn">
+              <span>Subscribe to monthly newsletter</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="card-success hidden invisible" id="success-card">
+        <div class="card-success-body">
+          <img src="/icon-success.svg" class="card-success-img" alt="Success icon" />
+          <h2 class="card-success-heading">Thanks for subscribing!</h2>
+          <p class="card-success-text">A confirmation email has been sent to <span class="text-bold" id="email-msg">ash@loremcompany.com</span>. Please open it and click the button inside to confirm your subscription</p>
+        </div>
+        <button class="btn" id="dismiss-btn">
+          <span>Dismiss message</span>
+        </button>
+      </div>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
